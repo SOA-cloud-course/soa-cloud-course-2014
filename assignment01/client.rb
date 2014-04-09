@@ -131,7 +131,7 @@ tests.each do |t|
   end
 end
 
-response = "total #{errors} errors for #{tests.length} tests, #{(100.0 * errors / tests.length).round(2)}% passed"
+response = "total #{errors} errors for #{tests.length} tests, #{(100 * (1 - errors.to_f / tests.length)).round(2)}% passed"
 
 if errors == 0
   puts response.hl(:green)
