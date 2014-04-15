@@ -44,15 +44,14 @@ class collector(PmkSeed.Seed):
         self.current_date = None
 
     def run(self, pkt, tweet):
-        if self.current_date == None:
-            new_date = re.search('T\w*(\s+)(.*)(\n)', tweet).group(2)
-            self.current_date = datetime.datetime.strptime(new_date, "%Y-%m-%d %H:%M:%S")
+        new_date = re.search('T\w*(\s+)(.*)(\n)', tweet).group(2)
+        self.current_date = datetime.datetime.strptime(new_date, "%Y-%m-%d %H:%M:%S")
         if self.date == None:
             # self.logger.info("self.date == None")
             self.date = self.current_date
         reset_counter = False
         # self.logger.info("distance: " + str(abs((self.date - self.current_date).total_seconds())) + " " + str(self.date) + " " + str(self.current_date))
-        if self.date == None or abs((self.date - self.current_date).total_seconds()) > 1:
+        if self.date == None or abs((self.date - self.current_date).total_seconds()) > 10:
             # self.logger.info("new current date")
             self.date = self.current_date
             reset_counter = True
