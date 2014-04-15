@@ -1,6 +1,6 @@
 # Sentiment analysis with Pumpkin
 
-The workflow contains three workers:
+The workflow contains three workers (seeds):
 - `tweetinject.py` - reads a file with tweets and sends them to the queue
 - `filter.py` - performs sentiment analysis on incoming tweets
 - `collector.py` - counts tweets and writes result into a file
@@ -14,6 +14,15 @@ pip install pika
 ## Prepare *pumpkin* environment
 
 You should copy required files to you VM (as it is explained in the assignment).
+
+### Workers (seeds)
+
+You should copy desired workers to `~/pmk-seeds` directory - or directory that you specify with `--taskdir` option (see below in section Run Pumpkin).
+
+Do the following if you want to run all three workers on one VM:
+```
+scp *.py pumpkin:pmk-seeds/
+```
 
 ### Classifier
 
