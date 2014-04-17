@@ -1,4 +1,3 @@
-__author__ = 'reggie'
 ###START-CONF
 ##{
 ##"object_name": "filter",
@@ -28,8 +27,6 @@ __author__ = 'reggie'
 ##
 ##          ] }
 ##END-CONF
-
-
 
 import re
 from random import randint

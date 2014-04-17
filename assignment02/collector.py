@@ -1,5 +1,3 @@
-__author__ = 'reggie'
-
 ###START-CONF
 ##{
 ##"object_name": "collector",

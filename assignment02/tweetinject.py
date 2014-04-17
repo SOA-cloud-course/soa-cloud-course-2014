@@ -1,5 +1,3 @@
-__author__ = 'reggie'
-
 ###START-CONF
 ##{
 ##"object_name": "tweetinject",
@@ -29,11 +27,7 @@ from os import listdir
 from os.path import isfile, join
 import pika
 from os.path import expanduser
-
-
 from pumpkin import *
-
-import zmq
 
 class tweetinject(PmkSeed.Seed):
 
@@ -42,12 +36,9 @@ class tweetinject(PmkSeed.Seed):
         self.connection = None
         self.channel = None
 
-        pass
-
     def on_load(self):
         print "Loading: " + self.__class__.__name__
         self.connection, self.channel = self.__open_rabbitmq_channel()
-        pass
 
     def __open_rabbitmq_channel(self):
         host, port, username, password, vhost = self.context.get_rabbitmq_cred()
@@ -76,12 +67,11 @@ class tweetinject(PmkSeed.Seed):
                             else:
                                 tweet = tweet + line
                                 self.dispatch(pkt, tweet, "RAW")
-
                                 del line
                                 del tweet
-        pass
 
     def publish(self, data, queue):
         self.channel.basic_publish(exchange='',
                               routing_key=queue,
                               body=str(data))
+
