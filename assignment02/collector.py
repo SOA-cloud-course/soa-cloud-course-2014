@@ -3,7 +3,6 @@
 ##"object_name": "collector",
 ##"object_poi": "qpwo-2345",
 ##"auto-load": true,
-##"group" : "T",
 ##"remoting" : false,
 ##"parameters": [
 ##                 {

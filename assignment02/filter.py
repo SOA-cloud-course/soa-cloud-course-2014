@@ -3,7 +3,6 @@
 ##"object_name": "filter",
 ##"object_poi": "qpwo-2345",
 ##"auto-load": true,
-##"group" : "T",
 ##"remoting" : true,
 ##"parameters": [
 ##                 {
