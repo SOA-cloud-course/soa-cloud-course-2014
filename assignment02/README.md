@@ -31,7 +31,7 @@ Copy trained classifier to required directory.
 mkdir -p /home/pumpkin/nltk_data/classifiers
 ```
 ```
-scp movie_reviews_NaiveBayes.pickle pumpkin1:nltk_data/classifier
+scp movie_reviews_NaiveBayes.pickle pumpkin1:nltk_data/classifiers/
 ```
 
 ### Configuration file
@@ -40,6 +40,7 @@ Complete (see slides) and copy *pumpkin* configuration file into working directo
 ```
 scp pumpkin.cfg pumpkin1:pumpkin/
 ```
+You can also change a group to other value (it is set to `T`). With an existing value, your workers might communicate with workers of other people since the messages are identified in the system by a pair: message type and a group.
 
 ## Run Pumpkin
 
